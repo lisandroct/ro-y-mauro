@@ -11,9 +11,9 @@
 
         function redirect() {
             if(isOnIOS() || !supportsWasm()) {
-                window.location.replace("ro-y-mauro/mono/asmjs");
+                HTMLBodyElement.innerHTML = "asmjs";
             } else {
-                window.location.replace("ro-y-mauro/mono/wasm");
+                HTMLBodyElement.innerHTML = "wasm";
             }
         }
 
