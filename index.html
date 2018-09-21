@@ -11,9 +11,9 @@
 
         function redirect() {
             if(isOnIOS() || !supportsWasm()) {
-                window.location.replace("{{site.baseurl}}/mauro/asmjs");
+                window.location.replace("/mauro/asmjs");
             } else {
-                 window.location.replace("{{site.baseurl}}/mauro/wasm");
+                 window.location.replace("/mauro/wasm");
             }
         }
 
