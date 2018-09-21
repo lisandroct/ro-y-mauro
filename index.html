@@ -13,7 +13,7 @@
             if(isOnIOS() || !supportsWasm()) {
                 window.location.replace("{{site.baseurl}}/mauro/asmjs");
             } else {
-                HTMLBodyElement.innerHTML = "{{site.baseurl}}/mauro/wasm";
+                 window.location.replace("{{site.baseurl}}/mauro/wasm");
             }
         }
 
