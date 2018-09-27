@@ -4,16 +4,38 @@
     </head>
     <body>
     </body>
+    <script src="url-search-params.js"></script> 
     <script>
         (function() {
             redirect();
         }());
 
         function redirect() {
-            if(isOnIOS() || !supportsWasm()) {
-                window.location.replace("/ro/asmjs");
+            var n = new URLSearchParams(window.location.search).get("n");
+            
+            if(n) {
+                var request = new XMLHttpRequest();
+                request.open("GET", "guests.json", false);
+                request.send(null);
+                var guests = JSON.parse(request.responseText);
+                var game = undefined;
+                if(guests == 0) {
+                    game = "mauro";
+                } else if(guests == 1) {
+                    game = "ro"
+                }
+
+                if(game) {
+                    if(isOnIOS() || !supportsWasm()) {
+                        window.location.replace("/" + game + "/asmjs");
+                    } else {
+                         window.location.replace("/" + game + "/wasm");
+                    }
+                } else {
+                    window.location.replace("https://google.com");
+                }
             } else {
-                 window.location.replace("/ro/wasm");
+                window.location.replace("https://google.com");
             }
         }
 
