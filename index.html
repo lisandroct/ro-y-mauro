@@ -18,13 +18,12 @@
                 request.open("GET", "guests.json", false);
                 request.send(null);
                 var guests = JSON.parse(request.responseText);
-                var game = guests[n];
-                if(guests == 0) {
+                var gameIndex = guests[n];
+                var game = undefined;
+                if(gameIndex == 0) {
                     game = "mauro";
-                } else if(guests == 1) {
+                } else if(gameIndex == 1) {
                     game = "ro";
-                } else {
-                    game = "undefined";
                 }
 
                 if(game) {
