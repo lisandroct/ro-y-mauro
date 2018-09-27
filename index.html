@@ -11,32 +11,15 @@
         }());
 
         function redirect() {
-            var n = new URLSearchParams(window.location.search).get("n");
+            var game = "mauro";
+            if(Math.random() < 0.5) {
+                game = "ro";
+            }
             
-            if(n) {
-                var request = new XMLHttpRequest();
-                request.open("GET", "guests.json", false);
-                request.send(null);
-                var guests = JSON.parse(request.responseText);
-                var gameIndex = guests[n];
-                var game;
-                if(gameIndex == 0) {
-                    game = "mauro";
-                } else if(gameIndex == 1) {
-                    game = "ro";
-                }
-
-                if(game) {
-                    if(isOnIOS() || !supportsWasm()) {
-                        window.location.replace("/" + game + "/asmjs");
-                    } else {
-                         window.location.replace("/" + game + "/wasm");
-                    }
-                } else {
-                    window.location.replace("https://google.com");
-                }
+            if(isOnIOS() || !supportsWasm()) {
+                window.location.replace("/" + game + "/asmjs");
             } else {
-                window.location.replace("https://google.com");
+                 window.location.replace("/" + game + "/wasm");
             }
         }
 
