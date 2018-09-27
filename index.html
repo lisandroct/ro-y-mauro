@@ -19,7 +19,7 @@
                 request.send(null);
                 var guests = JSON.parse(request.responseText);
                 var gameIndex = guests[n];
-                var game = undefined;
+                var game;
                 if(gameIndex == 0) {
                     game = "mauro";
                 } else if(gameIndex == 1) {
