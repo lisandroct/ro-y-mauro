@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: #d9effd;   
+            }
+            .imgbox {
+                display: grid;
+                height: 100%;
+                z-index: 10;
+            }
+            .center-fit {
+                max-width: 100%;
+                max-height: 100vh;
+                margin: auto;
+                z-index: 10;
+            }
+            .left-bottom {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                max-width: 35%;
+                z-index: 0;
+            }
+            .right-top {
+                position: absolute;
+                right: 0;
+                top: 0;
+                max-width: 70%;
+                z-index: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="images/b-1.png" class="left-bottom">
+        <img src="images/b-2.png" class="right-top">
+        <div class="imgbox">
+            <img src="images/b-3.png" class="center-fit">
+        </div>
+        <a href="images/ro-y-mauro.jpg" download>Download image</a>
+    </body>
+</html>
