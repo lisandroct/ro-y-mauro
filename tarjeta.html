@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
+        <meta charset="utf-8">
+        <title>Ro y Mauro ❤️</title>
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu" rel="stylesheet">
         <style>
             * {
                 margin: 0;
@@ -32,14 +35,46 @@
                 max-width: 70%;
                 z-index: -10;
             }
+            .fullscreen {
+                width: 100%;
+                height: 100%;
+            }
+            .labels {
+                height: 100%;
+                width: 70%;
+                left: 15%;
+                display: flex;
+                position: fixed;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                font-family: 'Baloo Tammudu', cursive;
+                font-size: xx-large;
+                color: #322646;
+            }
         </style>
     </head>
+    
     <body>
-        <img src="images/b-1.png" class="left-bottom">
-        <img src="images/b-2.png" class="right-top">
-        <div class="imgbox">
-            <img src="images/b-3.png" class="center-fit">
+        <div class="labels">
+            <div>La vida no se mide por las veces que respiras, sino por los momentos que te dejan sin aliento.</div>
         </div>
-        <a href="images/ro-y-mauro.jpg" download>Download image</a>
+        <div class="labels">
+            <div>Como sabemos que la alegría compartida se multiplica queremos hacerte parte del día  más feliz de nuestra vida.</div>
+        </div>
+        <div class="fullscreen">
+            <img src="images/b-1.png" class="left-bottom">
+            <img src="images/b-2.png" class="right-top">
+            <div class="imgbox">
+                <img src="images/b-3.png" class="center-fit">
+            </div>
+            <a id="link" href="images/ro-y-mauro.jpg" style="display: none" download></a>
+        </div>
     </body>
+    
+    <script>        
+        (function () {            
+            setTimeout((function () { document.getElementById("link").click(); }), 8000);
+        }());
+    </script>
 </html>
